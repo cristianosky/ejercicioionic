@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionic-eje": {
+      "hosting": {
+        "app": [
+          "ionic-eje"
+        ]
+      }
+    }
+  }
+}

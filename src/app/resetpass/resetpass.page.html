@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Reestableces contraseña</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <div class="container">
+        <form [formGroup]="formularioReset">
+            <ion-item>
+                <ion-label position="floating">Correo</ion-label>
+                <ion-input type="texto" name=correo formControlName="correo"></ion-input>
+            </ion-item>
+            <div style="color: red;" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                <p *ngIf="correo.errors.required">
+                    El correo es requerido
+                </p>
+
+                <p *ngIf="correo.errors">
+                    El correo no es valido
+                </p>
+            </div>
+            <ion-button expand="block" class="submit-btn mt-5" (click)="enviar(formularioReset)">Registrar</ion-button>
+        </form>
+    </div>
+</ion-content>

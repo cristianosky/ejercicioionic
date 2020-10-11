@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>dashboard</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <div class="container mt-2">
+        <h1>Bienvenido <small>{{nombre}}</small></h1>
+        <h4>te haz iniciado Sesión con el correo: {{correo}}</h4>
+        <img [src]="proveedor" alt="">
+    </div>
+</ion-content>
+<ion-footer (click)="logout()">
+    <ion-toolbar color="secondary">
+        <ion-title>Cerrar Sesión</ion-title>
+    </ion-toolbar>
+</ion-footer>
