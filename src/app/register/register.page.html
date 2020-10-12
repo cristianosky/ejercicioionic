@@ -48,6 +48,11 @@
                     Las contraseñas no coinciden
                 </p>
             </div>
+            <ion-button (click)="agregarfo()">¿Desea agergar una foto?</ion-button>
+            <ion-item *ngIf="agregarfoto">
+                <ion-label position="stacked">Subir foto</ion-label>
+                <ion-input type="file" name="foto" formControlName="foto"></ion-input>
+            </ion-item>
 
             <ion-button expand="block" class="submit-btn mt-5" (click)="Registar(formularioRe)">Registrar</ion-button>
         </form>

@@ -15,6 +15,7 @@ export class RegisterPage implements OnInit {
   formularioRe: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+  agregarfoto:boolean = false
 
   constructor( 
     private fb: FormBuilder,
@@ -52,12 +53,17 @@ export class RegisterPage implements OnInit {
       this.formularioRe.get('ccontrasena').dirty;
   }
 
+  agregarfo(){
+    this.agregarfoto = !this.agregarfoto;
+  }
+
   formuarioR(){
     this.formularioRe = this.fb.group({
       nombre: ['', [Validators.minLength(5), Validators.required]],
       correo: ['',[Validators.required,  Validators.pattern('^[a-z0-9._%+-]+@[a-z]+\\.[a-z]{2,4}$')]],
       contrasena: ['', [Validators.required, Validators.minLength(8), passwordValidation()]],
       ccontrasena: ['', [Validators.required]],
+      foto: [''],
     },{validator: this.passiguales}) 
   }
 
